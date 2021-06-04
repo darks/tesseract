@@ -1,0 +1,6 @@
+这里提一句TesseractOCR的源码安装：
+TesseractOCR的github项目地址在这里，其实它的安装就是平时安装源码的那一套，不过首先你得先源码安装好Leptonica，因为Tesseract是依赖于这个库的，Leptonica的官网在这里，解压并进入Leptonica源码目录，./configure==>make==>sudo make install==>make check，就安装完毕，然后配置好环境变量[我这里以linux为例子，修改~/.bashrc或者/etc/environment，增加$PATH环境变量内容/usr/local/lib/(不然Tesseract编译的时候就找不到Leptonica了)]，接下来请按照TesseractOCR官方源码安装教程安装，链接点这里，这个页面还包含Tesseract训练工具的安装，这个训练工具是为了方便我们可以用足够多的样本形成一个针对性的专用训练集(fonttype.traineddata)存在的，这个训练集是提高识别率重要的一环，安装方法也是依照刚才的官方教程就好了，顺便提一句，我墙裂推荐调整box的工具用jTessBoxEditor，图形化界面，而且启动方便简单，我现在总算是看破了，要集中注意力在你想要实现的东西上，而不要被其他事情分散注意力，尽管它们都是一些很有趣的事情
+最后安装完Tesseract以后，别忘记新建一个环境变量$TESSDATA_PREFIX=/usr/local/share/tessdata/或者其他Tesseract放置语言包的地方，然后把你训练好的训练集(fonttype.traineddata)放进这个目录,其实Tesseract也有自己的已经做好的语言训练集(Language Data)，你可以到这里下载全部语言的.traineddata，不过这个包不具备针对性就是了，要想识别率进一步提高，还是得对症下药，取足够多的样本然后自己弄成一个训练集
+————————————————
+版权声明：本文为CSDN博主「SilbertMonaphia」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_29245097/article/details/52833310
